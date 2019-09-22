@@ -3,3 +3,10 @@
             {{customer.firstName}} {{customer.lastName}}
         </li>
     </ul>
+
+
+    <strong *ngIf="selectedCustomer; else elseBlock">you have selected : {{selectedCustomer.firstName}}  </strong>
+
+    <ng-template #elseBlock>
+        <p>You shold select a name !</p>
+    </ng-template>

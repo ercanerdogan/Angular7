@@ -13,6 +13,7 @@ export class CustomerComponent implements OnInit {
   customer:string="Ercan Erdoğan"
 
   customers:Customer[]=[]
+  selectedCustomer:Customer;
   
   ngOnInit() {
     this.customers=[
@@ -24,7 +25,7 @@ export class CustomerComponent implements OnInit {
 
 
   selectCustomer(customer:Customer){
-    alert(customer.firstName+" - "+ customer.lastName);
+    this.selectedCustomer = customer;
   }
 
 }
