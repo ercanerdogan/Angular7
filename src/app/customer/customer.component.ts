@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Customer } from './customer';
 
 @Component({
@@ -14,6 +14,8 @@ export class CustomerComponent implements OnInit {
 
   customers:Customer[]=[]
   selectedCustomer:Customer;
+
+  @Input() city :string;
   
   ngOnInit() {
     this.customers=[

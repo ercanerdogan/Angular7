@@ -1,3 +1,4 @@
+    
     <ul>
         <li *ngFor="let customer of customers" (click)="selectCustomer(customer)">
             {{customer.firstName}} {{customer.lastName}}
@@ -10,3 +11,6 @@
     <ng-template #elseBlock>
         <p>You shold select a name !</p>
     </ng-template>
+
+
+    <h3>Current city is {{city}}</h3>
