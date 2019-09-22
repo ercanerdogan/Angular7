@@ -1,5 +1,5 @@
     <ul>
-        <li *ngFor="let customer of customers">
+        <li *ngFor="let customer of customers" (click)="selectCustomer(customer)">
             {{customer.firstName}} {{customer.lastName}}
         </li>
     </ul>

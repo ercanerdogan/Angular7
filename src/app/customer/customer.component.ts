@@ -22,4 +22,9 @@ export class CustomerComponent implements OnInit {
     ]
   }
 
+
+  selectCustomer(customer:Customer){
+    alert(customer.firstName+" - "+ customer.lastName);
+  }
+
 }
