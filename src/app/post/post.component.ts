@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Post } from './post';
+import { User } from './user';
 
 @Component({
   selector: 'app-post',
@@ -11,15 +12,27 @@ export class PostComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
-  postPath:string="https://jsonplaceholder.typicode.com/posts";
+  postPath:string="https://jsonplaceholder.typicode.com/";
   posts:Post[];
-
+  users:User[];
 
   ngOnInit() {
-    this.http.get<Post[]>(this.postPath).subscribe(response=>{
+    this.getPosts();
+    this.getUsers();
+  }
+
+  getPosts(){
+    this.http.get<Post[]>(this.postPath+ "posts").subscribe(response=>{
       this.posts=response;
     
-    })
+    });
+  }
+
+  getUsers(){
+    this.http.get<User[]>(this.postPath+ "users").subscribe(response=>{
+      this.users=response;
+    
+    });
   }
 
 }
