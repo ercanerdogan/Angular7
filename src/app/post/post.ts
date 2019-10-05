@@ -1,5 +1,5 @@
 export class Post{
-    userID:number;
+    userId:number;
     ID:number;
     title:string;
     body:string;
